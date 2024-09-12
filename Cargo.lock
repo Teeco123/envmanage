@@ -131,7 +131,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "envadd"
+name = "envmanage"
 version = "0.1.0"
 dependencies = [
  "clap",
