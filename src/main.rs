@@ -1,3 +1,4 @@
+use clap::Parser;
 use directories::UserDirs;
 use std::{
     fs::OpenOptions,
@@ -5,7 +6,13 @@ use std::{
     path::{Path, PathBuf},
 };
 
+#[derive(Parser)]
+struct Args{
+    path: String,
+}
+
 fn main() -> std::io::Result<()> {
+    let args = Args::parse();
     let mut path_buff = PathBuf::new();
 
     if let Some(user_dirs) = UserDirs::new() {
@@ -27,7 +34,8 @@ fn main() -> std::io::Result<()> {
 
     // Write some data to the file
     writer.write_all(b"export PATH=")?;
-    writer.write_all(b"\"./gowno/cwel")?;
+    writer.write_all(b"\"")?;
+    writer.write_all(args.path.as_bytes())?;
     writer.write_all(b":$PATH\"\n")?;
     // Flush the writer to ensure all data is written to disk
 
