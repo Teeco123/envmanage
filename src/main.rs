@@ -17,7 +17,7 @@ fn main() -> std::io::Result<()> {
 
     if let Some(user_dirs) = UserDirs::new() {
         let home = user_dirs.home_dir();
-        let file = Path::new("test.txt");
+        let file = Path::new(".zprofile");
         path_buff.push(home);
         path_buff.push(file);
     }
