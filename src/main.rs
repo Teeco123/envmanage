@@ -1,7 +1,9 @@
 use directories::UserDirs;
-use std::fs::OpenOptions;
-use std::io::{BufWriter, Write};
-use std::path::{Path, PathBuf};
+use std::{
+    fs::OpenOptions,
+    io::{BufWriter, Write},
+    path::{Path, PathBuf},
+};
 
 fn main() -> std::io::Result<()> {
     let mut path_buff = PathBuf::new();
